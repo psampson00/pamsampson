@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pamsampson</title>
+    <title>Pamsampson - Disco Vibes</title>
     <style>
         * {
             margin: 0;
@@ -11,34 +11,106 @@
             box-sizing: border-box;
         }
 
+        @keyframes disco-pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px #ff1493, 0 0 40px #ff69b4;
+            }
+            50% {
+                box-shadow: 0 0 30px #ff1493, 0 0 50px #ff69b4, 0 0 70px #9d00ff;
+            }
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            font-family: 'Arial Black', 'Segoe UI', sans-serif;
+            background: linear-gradient(45deg, #ff1493, #ff69b4, #9d00ff, #ff1493);
+            background-size: 400% 400%;
+            animation: gradient-shift 8s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff1493 0%, #9d00ff 50%, #ff69b4 100%);
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 40px rgba(255, 20, 147, 0.6);
+            animation: disco-pulse 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '✨ 🪩 ✨ 🪩 ✨ 🪩 ✨ 🪩 ✨ 🪩 ✨ 🪩 ✨';
+            position: absolute;
+            top: 5px;
+            left: 0;
+            right: 0;
+            font-size: 1.5em;
+            animation: sparkle 1.5s infinite;
+        }
+
+        header::after {
+            content: '✨ 🪩 ✨ 🪩 ✨ 🪩 ✨ 🪩 ✨ 🪩 ✨ 🪩 ✨';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            font-size: 1.5em;
+            animation: sparkle 1.5s infinite;
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 3.5em;
             margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(157, 0, 255, 0.8);
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
         }
 
         header p {
-            font-size: 1.1em;
-            opacity: 0.95;
+            font-size: 1.5em;
+            opacity: 0.98;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
         }
 
         nav {
-            background-color: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            background: linear-gradient(90deg, #ff1493, #9d00ff, #ff69b4);
+            padding: 20px 0;
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -48,19 +120,27 @@
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         nav a {
             text-decoration: none;
-            color: #667eea;
-            font-weight: 500;
-            transition: color 0.3s;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
         }
 
         nav a:hover {
-            color: #764ba2;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
         }
 
         .container {
@@ -70,23 +150,29 @@
         }
 
         .section {
-            background: white;
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(157, 0, 255, 0.2));
+            backdrop-filter: blur(10px);
             padding: 40px;
             margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(255, 20, 147, 0.3);
+            border: 2px solid rgba(255, 20, 147, 0.5);
+            animation: disco-pulse 3s infinite;
         }
 
         .section h2 {
-            color: #667eea;
+            color: #fff;
             margin-bottom: 20px;
-            font-size: 2em;
+            font-size: 2.5em;
+            text-shadow: 0 0 20px rgba(157, 0, 255, 0.8);
+            letter-spacing: 2px;
         }
 
         .section p {
             line-height: 1.8;
             margin-bottom: 15px;
-            font-size: 1.05em;
+            font-size: 1.1em;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         }
 
         .gallery {
@@ -99,14 +185,17 @@
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(255, 20, 147, 0.4);
             transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 20, 147, 0.1);
         }
 
         .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 20, 147, 0.8), 0 0 40px rgba(157, 0, 255, 0.6);
+            animation: float 2s ease-in-out infinite;
         }
 
         .gallery-item img {
@@ -118,10 +207,11 @@
 
         .gallery-item-text {
             padding: 15px;
-            background: white;
+            background: rgba(0, 0, 0, 0.3);
             min-height: 80px;
             display: flex;
             align-items: center;
+            backdrop-filter: blur(5px);
         }
 
         .gallery-item-text p {
@@ -130,24 +220,38 @@
         }
 
         footer {
-            background-color: #2c3e50;
+            background: linear-gradient(90deg, #ff1493, #9d00ff, #ff69b4);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             margin-top: 40px;
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
         }
 
         footer p {
             margin: 0;
+            font-size: 1.1em;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin: 0 5px;
         }
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.8em;
+                font-size: 2.2em;
             }
 
             nav ul {
-                gap: 15px;
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 0.9em;
+                padding: 8px 15px;
             }
 
             .section {
@@ -162,82 +266,165 @@
 </head>
 <body>
     <header>
-        <h1>Pam Sampson</h1>
-        <p>Hi gang! Testing out new website</p>
+        <h1>PAMSAMPSON</h1>
+        <p>✨ DISCO VIBES ✨</p>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#home"><span class="emoji">🏠</span>Home</a></li>
+            <li><a href="#travel"><span class="emoji">✈️</span>Travel</a></li>
+            <li><a href="#dance"><span class="emoji">💃</span>Dance</a></li>
+            <li><a href="#rods"><span class="emoji">🎣</span>Rods</a></li>
+            <li><a href="#gallery"><span class="emoji">🪩</span>Gallery</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <!-- Home Section -->
         <section id="home" class="section">
-            <h2>Welcome</h2>
+            <h2><span class="emoji">🌟</span>Welcome to My Disco World<span class="emoji">🌟</span></h2>
             <p>
-                Hello! This is your personal website where you can share your photos and stories.
-                Feel free to customize this content with your own text and images.
+                Get ready to disco, travel the world, catch some fish, and dance your heart out!
+                This is your hub for all things pink, sparkly, and fabulous.
             </p>
             <p>
-                This is a simple, clean, and responsive website that looks great on all devices.
-                Edit the content directly in the HTML file to make it your own.
+                Whether you're here to share travel adventures, dance moves, fishing tales, or just to vibe with the disco energy,
+                you're in the right place. Let's make some memories! 🪩✨
             </p>
+        </section>
+
+        <!-- Travel Section -->
+        <section id="travel" class="section">
+            <h2><span class="emoji">✈️</span>Travel Adventures</h2>
+            <p>
+                Explore the world and share your travel stories! From exotic beaches to bustling cities,
+                document your adventures and inspire others to explore.
+            </p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Travel+1" alt="Travel 1">
+                    <div class="gallery-item-text">
+                        <p>Add your travel photo and destination details</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Travel+2" alt="Travel 2">
+                    <div class="gallery-item-text">
+                        <p>Share your favorite travel memories</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Travel+3" alt="Travel 3">
+                    <div class="gallery-item-text">
+                        <p>Where will you go next?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dance Section -->
+        <section id="dance" class="section">
+            <h2><span class="emoji">💃</span>Dance & Disco</h2>
+            <p>
+                From retro disco moves to modern grooves, this is where the beat drops and the energy rises!
+                Share your dance videos, choreography, and let the disco balls spin. 🪩✨
+            </p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Dance+1" alt="Dance 1">
+                    <div class="gallery-item-text">
+                        <p>Your favorite dance moment</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Dance+2" alt="Dance 2">
+                    <div class="gallery-item-text">
+                        <p>Disco fever in full effect</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Dance+3" alt="Dance 3">
+                    <div class="gallery-item-text">
+                        <p>Feel the rhythm and groove</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rods Section -->
+        <section id="rods" class="section">
+            <h2><span class="emoji">🎣</span>Fishing & Rods</h2>
+            <p>
+                Reel in the big ones and share your fishing adventures! Whether you're into fly fishing,
+                deep sea fishing, or just a peaceful day by the water, show off your catches and fishing tales.
+            </p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Fishing+1" alt="Fishing 1">
+                    <div class="gallery-item-text">
+                        <p>Your biggest catch</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Fishing+2" alt="Fishing 2">
+                    <div class="gallery-item-text">
+                        <p>Fishing at sunrise</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Fishing+3" alt="Fishing 3">
+                    <div class="gallery-item-text">
+                        <p>Favorite fishing spots</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Gallery Section -->
         <section id="gallery" class="section">
-            <h2>Gallery</h2>
-            <p>A collection of photos and their descriptions.</p>
+            <h2><span class="emoji">🪩</span>Main Gallery</h2>
+            <p>A collection of your favorite memories in all their disco-ball glory!</p>
             <div class="gallery">
                 <div class="gallery-item">
                     <img src="https://via.placeholder.com/300x300?text=Photo+1" alt="Photo 1">
                     <div class="gallery-item-text">
-                        <p>Add your photo here and describe it</p>
+                        <p>Add your photo here</p>
                     </div>
                 </div>
 
                 <div class="gallery-item">
                     <img src="https://via.placeholder.com/300x300?text=Photo+2" alt="Photo 2">
                     <div class="gallery-item-text">
-                        <p>Add your photo here and describe it</p>
+                        <p>Share your moment</p>
                     </div>
                 </div>
 
                 <div class="gallery-item">
                     <img src="https://via.placeholder.com/300x300?text=Photo+3" alt="Photo 3">
                     <div class="gallery-item-text">
-                        <p>Add your photo here and describe it</p>
+                        <p>Keep it sparkly</p>
                     </div>
                 </div>
 
                 <div class="gallery-item">
                     <img src="https://via.placeholder.com/300x300?text=Photo+4" alt="Photo 4">
                     <div class="gallery-item-text">
-                        <p>Add your photo here and describe it</p>
+                        <p>Disco forever</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h2>About</h2>
-            <p>
-                This is the about section. Share more information about yourself, your interests,
-                your background, or whatever you'd like your visitors to know about you.
-            </p>
-            <p>
-                You can add as many sections as you'd like and customize the design to match your style.
-            </p>
-        </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Pamsampson. All rights reserved.</p>
+        <p><span class="emoji">🪩</span> Keep Disco'ing <span class="emoji">✨</span> &copy; 2026 Pamsampson <span class="emoji">✨</span> Living in Color <span class="emoji">🪩</span></p>
     </footer>
 </body>
 </html>
