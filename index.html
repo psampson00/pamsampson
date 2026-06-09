@@ -239,6 +239,82 @@
             font-size: 0.9em;
         }
 
+        /* Tic Tac Toe Styles */
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .game-info {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .game-info .chicken {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cell {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(255, 20, 147, 0.8);
+            border-radius: 10px;
+            font-size: 2em;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .cell:hover {
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 15px rgba(255, 20, 147, 0.8);
+            transform: scale(1.05);
+        }
+
+        .cell.x {
+            color: #ff69b4;
+        }
+
+        .cell.o {
+            color: #9d00ff;
+        }
+
+        .reset-btn {
+            padding: 15px 40px;
+            font-size: 1.1em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .reset-btn:hover {
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.8);
+            transform: scale(1.05);
+        }
+
         footer {
             background: linear-gradient(90deg, #ff1493, #9d00ff, #ff69b4);
             color: white;
@@ -258,6 +334,15 @@
         .emoji {
             font-size: 1.2em;
             margin: 0 5px;
+        }
+
+        a {
+            color: #ff69b4;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #ffb3d9;
         }
 
         @media (max-width: 768px) {
@@ -285,6 +370,16 @@
             .friends-gallery {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
+
+            .board {
+                grid-template-columns: repeat(3, 70px);
+            }
+
+            .cell {
+                width: 70px;
+                height: 70px;
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -298,11 +393,11 @@
         <ul>
             <li><a href="#friends"><span class="emoji">👯</span>Friends</a></li>
             <li><a href="#home"><span class="emoji">🏠</span>Home</a></li>
+            <li><a href="#tictactoe"><span class="emoji">🎮</span>Chicken Game</a></li>
             <li><a href="#travel"><span class="emoji">✈️</span>Travel</a></li>
             <li><a href="#dance"><span class="emoji">💃</span>Dance</a></li>
-            <li><a href="#running"><span class="emoji">🏃‍♀️</span>Running</a></li>
             <li><a href="#spud"><span class="emoji">🐕</span>Spud</a></li>
-            <li><a href="#events"><span class="emoji">🎉</span>RODS</a></li>
+            <li><a href="#events"><span class="emoji">🎉</span>Events</a></li>
             <li><a href="#gallery"><span class="emoji">🪩</span>Gallery</a></li>
         </ul>
     </nav>
@@ -360,7 +455,7 @@
 
 
                 <div class="gallery-item">
-                    <img src="images/moe.jpeg" alt="Friend 6">
+                    <img src="images/moe.jpeg" alt="Friend 7">
                     <div class="gallery-item-text">
                         <p>Moe</p>
                     </div>
@@ -372,13 +467,40 @@
         <section id="home" class="section">
             <h2><span class="emoji">🌟</span>Welcome to My Disco World<span class="emoji">🌟</span></h2>
             <p>
-                Get ready to disco, travel the world, dance your heart out, spoil your pup, and plan amazing events!
+                Get ready to disco, travel the world, dance your heart out, spoil your pup, and play games!
                 This is your hub for all things pink, sparkly, and fabulous.
             </p>
             <p>
                 Whether you're here to share travel adventures, dance moves, adorable dog photos, event planning tips, or just to vibe with the disco energy,
                 you're in the right place. Let's make some memories! 🪩✨
             </p>
+        </section>
+
+        <!-- Tic Tac Toe Game Section -->
+        <section id="tictactoe" class="section">
+            <h2><span class="emoji">🎮</span>Play Tic Tac Toe vs the Chicken<span class="emoji">🐔</span></h2>
+            <p>
+                Challenge the disco chicken to a game of Tic Tac Toe! You are X (pink) and the chicken is O (purple).
+                Click on the cells to make your move. Can you outsmart the chicken?
+            </p>
+            <div class="game-container">
+                <div class="game-info">
+                    <div id="status" style="font-size: 1.2em; margin-bottom: 10px;">Your turn!</div>
+                    <div class="chicken">🐔</div>
+                </div>
+                <div class="board" id="board">
+                    <div class="cell" data-index="0"></div>
+                    <div class="cell" data-index="1"></div>
+                    <div class="cell" data-index="2"></div>
+                    <div class="cell" data-index="3"></div>
+                    <div class="cell" data-index="4"></div>
+                    <div class="cell" data-index="5"></div>
+                    <div class="cell" data-index="6"></div>
+                    <div class="cell" data-index="7"></div>
+                    <div class="cell" data-index="8"></div>
+                </div>
+                <button class="reset-btn" onclick="resetGame()">New Game</button>
+            </div>
         </section>
 
         <!-- Travel Section -->
@@ -422,36 +544,6 @@
             <p>Check out my dance website <a href="https://sites.google.com/view/lp-hiphopdance/home" target="_blank">here</a>.
             </p>
 
-        </section>
-
-        <!-- Run Section -->
-        <section id="running" class="section">
-            <h2><span class="emoji">🏃‍♀️</span>Running</h2>
-            <p>
-                Run Stuff
-            </p>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x300?text=Dance+1" alt="Dance 1">
-                    <div class="gallery-item-text">
-                        <p>run 1</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x300?text=Dance+2" alt="Dance 2">
-                    <div class="gallery-item-text">
-                        <p>run 2</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/300x300?text=Dance+3" alt="Dance 3">
-                    <div class="gallery-item-text">
-                        <p>run 3</p>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- Spud Section -->
@@ -555,5 +647,146 @@
     <footer>
         <p><span class="emoji">🪩</span> Keep Disco'ing <span class="emoji">✨</span> &copy; 2026 Pam Sampson <span class="emoji">✨</span> Living in Color <span class="emoji">🪩</span></p>
     </footer>
+
+    <script>
+        let board = ['', '', '', '', '', '', '', '', ''];
+        let gameActive = true;
+        let playerX = 'X';
+        let playerO = 'O';
+
+        const winningConditions = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        function checkWinner() {
+            for (let condition of winningConditions) {
+                const [a, b, c] = condition;
+                if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                    return board[a];
+                }
+            }
+            return null;
+        }
+
+        function checkDraw() {
+            return board.every(cell => cell !== '');
+        }
+
+        function getChickenMove() {
+            const availableMoves = board.map((cell, index) => cell === '' ? index : null).filter(val => val !== null);
+            
+            // Check if chicken can win
+            for (let move of availableMoves) {
+                const testBoard = [...board];
+                testBoard[move] = playerO;
+                for (let condition of winningConditions) {
+                    const [a, b, c] = condition;
+                    if (testBoard[a] === playerO && testBoard[a] === testBoard[b] && testBoard[a] === testBoard[c]) {
+                        return move;
+                    }
+                }
+            }
+
+            // Check if player can win and block
+            for (let move of availableMoves) {
+                const testBoard = [...board];
+                testBoard[move] = playerX;
+                for (let condition of winningConditions) {
+                    const [a, b, c] = condition;
+                    if (testBoard[a] === playerX && testBoard[a] === testBoard[b] && testBoard[a] === testBoard[c]) {
+                        return move;
+                    }
+                }
+            }
+
+            // Take center if available
+            if (availableMoves.includes(4)) return 4;
+
+            // Take corners
+            const corners = [0, 2, 6, 8].filter(i => availableMoves.includes(i));
+            if (corners.length) return corners[Math.floor(Math.random() * corners.length)];
+
+            // Take any available move
+            return availableMoves[Math.floor(Math.random() * availableMoves.length)];
+        }
+
+        function updateBoard() {
+            const cells = document.querySelectorAll('.cell');
+            cells.forEach((cell, index) => {
+                cell.textContent = board[index];
+                cell.classList.remove('x', 'o');
+                if (board[index] === playerX) cell.classList.add('x');
+                if (board[index] === playerO) cell.classList.add('o');
+            });
+        }
+
+        function updateStatus() {
+            const status = document.getElementById('status');
+            const winner = checkWinner();
+            
+            if (winner) {
+                gameActive = false;
+                if (winner === playerX) {
+                    status.textContent = '🎉 You Win! Beat the Chicken! 🎉';
+                } else {
+                    status.textContent = '🐔 The Chicken Wins! Try Again! 🐔';
+                }
+            } else if (checkDraw()) {
+                gameActive = false;
+                status.textContent = "It's a Draw! You Tied with the Chicken!";
+            } else {
+                status.textContent = 'Your turn!';
+            }
+        }
+
+        function handleCellClick(index) {
+            if (board[index] !== '' || !gameActive) return;
+
+            board[index] = playerX;
+            updateBoard();
+
+            let winner = checkWinner();
+            if (winner || checkDraw()) {
+                updateStatus();
+                return;
+            }
+
+            // Chicken's turn
+            setTimeout(() => {
+                const chickenMove = getChickenMove();
+                board[chickenMove] = playerO;
+                updateBoard();
+
+                winner = checkWinner();
+                if (winner || checkDraw()) {
+                    updateStatus();
+                } else {
+                    document.getElementById('status').textContent = 'Your turn!';
+                }
+            }, 500);
+        }
+
+        function resetGame() {
+            board = ['', '', '', '', '', '', '', '', ''];
+            gameActive = true;
+            updateBoard();
+            document.getElementById('status').textContent = 'Your turn!';
+        }
+
+        // Add click listeners
+        document.querySelectorAll('.cell').forEach((cell, index) => {
+            cell.addEventListener('click', () => handleCellClick(index));
+        });
+
+        // Initialize board
+        updateBoard();
+    </script>
 </body>
 </html>
