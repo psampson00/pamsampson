@@ -49,152 +49,28 @@
         .emoji { font-size: 1.2em; margin: 0 5px; }
         a { color: #ffb3d9; }
         @media (max-width: 768px) { header h1 { font-size: 2.2em; } nav ul { gap: 10px; } nav a { font-size: .9em; padding: 8px 12px; } .section { padding: 20px; } .board { grid-template-columns: repeat(3,70px); } .cell { width: 70px; height: 70px; font-size: 1.5em; } }
-
     </style>
 </head>
 <body>
-<header><h1>PAM SAMPSON</h1>
-    <p>✨ DISCO VIBES ✨</p></header>
-<nav>
-    <ul>
-        <li><a href="#friends">👯 Friends</a></li>
-        <li><a href="#home">🏠 Home</a></li>
-        <li><a href="#tictactoe">🎮 Chicken Games</a></li>
-        <li><a href="#travel">✈️ Travel</a></li>
-        <li><a href="#dance">💃 Dance</a></li>
-        <li><a href="#spud">🐕 Spud</a></li>
-        <li><a href="#events">🎉 Events</a></li>
-        <li><a href="#gallery">🪩 Gallery</a></li>
-    </ul>
-</nav>
+<header><h1>PAM SAMPSON</h1><p>✨ DISCO VIBES ✨</p></header>
+<nav><ul>
+    <li><a href="#friends">👯 Friends</a></li><li><a href="#home">🏠 Home</a></li><li><a href="#tictactoe">🎮 Chicken Games</a></li><li><a href="#travel">✈️ Travel</a></li><li><a href="#dance">💃 Dance</a></li><li><a href="#spud">🐕 Spud</a></li><li><a href="#events">🎉 Events</a></li><li><a href="#gallery">🪩 Gallery</a></li>
+</ul></nav>
 <div class="container">
-    <section id="friends" class="section"><h2>👯 My Top Friends 👯</h2>
-        <p>These are my favorite people in the world! Shout out to my amazing squad - the ones who make life fun, keep
-            me laughing, and are always there for the adventures.</p>
-        <div class="friends-gallery">
-            <div class="gallery-item"><img src="images/topfriends/tommyspace.png" alt="Tom">
-                <div class="gallery-item-text"><p>Tom</p></div>
-            </div>
-            <div class="gallery-item"><img src="images/topfriends/ashley.png" alt="Ashley">
-                <div class="gallery-item-text"><p>Ashley</p></div>
-            </div>
-            <div class="gallery-item"><img src="images/topfriends/gost.png" alt="Gost">
-                <div class="gallery-item-text"><p>Gost</p></div>
-            </div>
-            <div class="gallery-item"><img src="images/topfriends/lauren2.jpeg" alt="Lauren">
-                <div class="gallery-item-text"><p>Lauren</p></div>
-            </div>
-            <div class="gallery-item"><img src="images/topfriends/jen.png" alt="Jen">
-                <div class="gallery-item-text"><p>Jen</p></div>
-            </div>
-            <div class="gallery-item"><img src="images/topfriends/mandy2.jpeg" alt="Mandy">
-                <div class="gallery-item-text"><p>Mandy</p></div>
-            </div>
-            <div class="gallery-item"><img src="images/topfriends/moe.jpeg" alt="Moe">
-                <div class="gallery-item-text"><p>Moe</p></div>
-            </div>
-        </div>
-    </section>
-    <section id="home" class="section"><h2>🌟 Welcome to My Disco World 🌟</h2>
-        <p>Get ready to disco, travel the world, dance your heart out, spoil your pup, and play games! This is your hub
-            for all things pink, sparkly, and fabulous.</p>
-        <p>Whether you're here to share travel adventures, dance moves, adorable dog photos, event planning tips, or
-            just to vibe with the disco energy, you're in the right place. Let's make some memories! 🪩✨</p></section>
-    <section id="tictactoe" class="section"><h2>🎮 Chicken Tic Tac Toe 🐔</h2>
-        <p>Choose a difficulty and challenge the disco chickens. You are X (pink); the chickens are O (purple). Your
-            game results are saved in this browser.</p>
-        <div class="game-layout">
-            <div class="game-box"><h3>Disco Chicken</h3><span class="difficulty">Easy</span>
-                <div class="game-container">
-                    <div class="game-info">
-                        <div id="statusEasy" aria-live="polite">Your turn!</div>
-                        <div class="chicken">🐔</div>
-                    </div>
-                    <div class="stats" id="statsEasy" aria-live="polite">Wins: 0 | Losses: 0 | Ties: 0</div>
-                    <div class="board" id="boardEasy" aria-label="Easy tic tac toe board"></div>
-                    <button class="reset-btn" data-game="easy">New Game</button>
-                </div>
-            </div>
-            <div class="game-box"><h3>Midnight Master Chicken</h3><span class="difficulty">Hard — Unbeatable</span>
-                <div class="game-container">
-                    <div class="game-info">
-                        <div id="statusHard" aria-live="polite">Your turn!</div>
-                        <div class="chicken">🐔👑</div>
-                    </div>
-                    <div class="stats" id="statsHard" aria-live="polite">Wins: 0 | Losses: 0 | Ties: 0</div>
-                    <div class="board" id="boardHard" aria-label="Hard tic tac toe board"></div>
-                    <button class="reset-btn" data-game="hard">New Game</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="travel" class="section"><h2>✈️ Travel Adventures</h2>
-        <p>Explore the world and share your travel stories! From exotic beaches to bustling cities, document your
-            adventures and inspire others to explore.</p>
-        <div class="gallery">
-            <div class="gallery-item"><img src="images/travel/chicagoInNYC.jpeg" alt="Travel 1">
-                <div class="gallery-item-text"><p>Chicago in NYC</p></div>
-            </div>
-            <div class="gallery-item"><img src="images/travel/hawaii.jpeg" alt="Travel 2">
-                <div class="gallery-item-text"><p>Hawaii</p></div>
-            </div>
-            <div class="gallery-item"><img src="images/travel/vegaspool.jpeg" alt="Travel 3">
-                <div class="gallery-item-text"><p>Cosmo Pool</p></div>
-            </div>
-        </div>
-    </section>
-    <section id="dance" class="section"><h2>💃 Dance &amp; Disco</h2>
-        <p>From retro disco moves to modern grooves, this is where the beat drops and the energy rises! Share your dance
-            videos, choreography, and let the disco balls spin. 🪩✨</p>
-        <p>Check out my dance website <a href="https://sites.google.com/view/lp-hiphopdance/home" target="_blank"
-                                         rel="noopener">here</a>.</p></section>
-    <section id="spud" class="section"><h2>🐕 Spud - My Bloodhound</h2>
-        <p>Meet Spud, my amazing bloodhound! He's the best boy with an incredible nose and even better personality.
-            Share adorable photos of Spud on adventures, lounging at home, and being the perfect companion.</p>
-        <div class="gallery">
-            <div class="gallery-item"><img src="images/spud/spudCute.jpeg" alt="Spud 1">
-                <div class="gallery-item-text"><p>Spud relaxing in his favorite place</p></div>
-            </div>
-            <div class="gallery-item"><img src="images/spud/spudOutside.jpeg" alt="Spud 2">
-                <div class="gallery-item-text"><p>Spud chilling on his deck</p></div>
-            </div>
-            <div class="gallery-item"><img src="images/spud/spudPB.jpeg" alt="Spud 3">
-                <div class="gallery-item-text"><p>Spud finishing off the jar of peanut butter</p></div>
-            </div>
-        </div>
-    </section>
-    <section id="events" class="section"><h2>🎉 RODS Event Planning &amp; Parties</h2>
-        <p>Planning amazing events is my passion! From intimate gatherings to spectacular celebrations, I love creating
-            memorable experiences. Check out some of my favorite event moments and get inspired for your next party!</p>
-<!--        <div class="gallery">-->
-<!--            <div class="gallery-item"><img src="https://via.placeholder.com/300x300?text=Event+1" alt="Event 1">-->
-<!--                <div class="gallery-item-text"><p>An unforgettable celebration</p></div>-->
-<!--            </div>-->
-<!--            <div class="gallery-item"><img src="https://via.placeholder.com/300x300?text=Event+2" alt="Event 2">-->
-<!--                <div class="gallery-item-text"><p>Details that make the difference</p></div>-->
-<!--            </div>-->
-<!--            <div class="gallery-item"><img src="https://via.placeholder.com/300x300?text=Event+3" alt="Event 3">-->
-<!--                <div class="gallery-item-text"><p>Making memories together</p></div>-->
-<!--            </div>-->
-<!--        </div>-->
-    </section>
-    <section id="gallery" class="section"><h2>🪩 Main Gallery</h2>
-        <p>A collection of your favorite memories in all their disco-ball glory!</p>
-<!--        <div class="gallery">-->
-<!--            <div class="gallery-item"><img src="https://via.placeholder.com/300x300?text=Photo+1" alt="Photo 1">-->
-<!--                <div class="gallery-item-text"><p>Add your photo here</p></div>-->
-<!--            </div>-->
-<!--            <div class="gallery-item"><img src="https://via.placeholder.com/300x300?text=Photo+2" alt="Photo 2">-->
-<!--                <div class="gallery-item-text"><p>Share your moment</p></div>-->
-<!--            </div>-->
-<!--            <div class="gallery-item"><img src="https://via.placeholder.com/300x300?text=Photo+3" alt="Photo 3">-->
-<!--                <div class="gallery-item-text"><p>Keep it sparkly</p></div>-->
-<!--            </div>-->
-<!--            <div class="gallery-item"><img src="https://via.placeholder.com/300x300?text=Photo+4" alt="Photo 4">-->
-<!--                <div class="gallery-item-text"><p>Disco forever</p></div>-->
-<!--            </div>-->
-<!--        </div>-->
-    </section>
+<section id="friends" class="section"><h2>👯 My Top Friends 👯</h2><p>These are my favorite people in the world! Shout out to my amazing squad - the ones who make life fun, keep me laughing, and are always there for the adventures.</p><div class="friends-gallery">
+<div class="gallery-item"><img src="images/topfriends/tommyspace.png" alt="Tom"><div class="gallery-item-text"><p>Tom</p></div></div><div class="gallery-item"><img src="images/topfriends/ashley.png" alt="Ashley"><div class="gallery-item-text"><p>Ashley</p></div></div><div class="gallery-item"><img src="images/topfriends/gost.png" alt="Gost"><div class="gallery-item-text"><p>Gost</p></div></div><div class="gallery-item"><img src="images/topfriends/lauren2.jpeg" alt="Lauren"><div class="gallery-item-text"><p>Lauren</p></div></div><div class="gallery-item"><img src="images/topfriends/jen.png" alt="Jen"><div class="gallery-item-text"><p>Jen</p></div></div><div class="gallery-item"><img src="images/topfriends/mandy2.jpeg" alt="Mandy"><div class="gallery-item-text"><p>Mandy</p></div></div><div class="gallery-item"><img src="images/topfriends/moe.jpeg" alt="Moe"><div class="gallery-item-text"><p>Moe</p></div></div>
+</div></section>
+<section id="home" class="section"><h2>🌟 Welcome to My Disco World 🌟</h2><p>Get ready to disco, travel the world, dance your heart out, spoil your pup, and play games! This is your hub for all things pink, sparkly, and fabulous.</p><p>Whether you're here to share travel adventures, dance moves, adorable dog photos, event planning tips, or just to vibe with the disco energy, you're in the right place. Let's make some memories! 🪩✨</p></section>
+<section id="tictactoe" class="section"><h2>🎮 Chicken Tic Tac Toe 🐔</h2><p>Choose a difficulty and challenge the disco chickens. You are X (pink); the chickens are O (purple). Each chicken keeps its own browser-saved record.</p><div class="game-layout">
+<div class="game-box"><h3>Disco Chicken</h3><span class="difficulty">Easy</span><div class="game-container"><div class="game-info"><div id="statusEasy" aria-live="polite">Your turn!</div><div class="chicken">🐔</div></div><div class="stats" id="statsEasy" aria-live="polite">Wins: 0 | Losses: 0 | Ties: 0</div><div class="board" id="boardEasy" aria-label="Easy tic tac toe board"></div><button class="reset-btn" data-game="easy">New Game</button></div></div>
+<div class="game-box"><h3>Groove Guard Chicken</h3><span class="difficulty">Medium — Tricky but beatable</span><div class="game-container"><div class="game-info"><div id="statusMedium" aria-live="polite">Your turn!</div><div class="chicken">🐔🕶️</div></div><div class="stats" id="statsMedium" aria-live="polite">Wins: 0 | Losses: 0 | Ties: 0</div><div class="board" id="boardMedium" aria-label="Medium tic tac toe board"></div><button class="reset-btn" data-game="medium">New Game</button></div></div>
+<div class="game-box"><h3>Midnight Master Chicken</h3><span class="difficulty">Hard — Unbeatable</span><div class="game-container"><div class="game-info"><div id="statusHard" aria-live="polite">Your turn!</div><div class="chicken">🐔👑</div></div><div class="stats" id="statsHard" aria-live="polite">Wins: 0 | Losses: 0 | Ties: 0</div><div class="board" id="boardHard" aria-label="Hard tic tac toe board"></div><button class="reset-btn" data-game="hard">New Game</button></div></div>
+</div></section>
+<section id="travel" class="section"><h2>✈️ Travel Adventures</h2><p>Explore the world and share your travel stories! From exotic beaches to bustling cities, document your adventures and inspire others to explore.</p><div class="gallery"><div class="gallery-item"><img src="images/travel/chicagoInNYC.jpeg" alt="Chicago in NYC"><div class="gallery-item-text"><p>Chicago in NYC</p></div></div><div class="gallery-item"><img src="images/travel/hawaii.jpeg" alt="Hawaii"><div class="gallery-item-text"><p>Hawaii</p></div></div><div class="gallery-item"><img src="images/travel/vegaspool.jpeg" alt="Cosmo Pool"><div class="gallery-item-text"><p>Cosmo Pool</p></div></div></div></section>
+<section id="dance" class="section"><h2>💃 Dance &amp; Disco</h2><p>From retro disco moves to modern grooves, this is where the beat drops and the energy rises! Share your dance videos, choreography, and let the disco balls spin. 🪩✨</p><p>Check out my dance website <a href="https://sites.google.com/view/lp-hiphopdance/home" target="_blank" rel="noopener">here</a>.</p></section>
+<section id="spud" class="section"><h2>🐕 Spud - My Bloodhound</h2><p>Meet Spud, my amazing bloodhound! He's the best boy with an incredible nose and even better personality. Share adorable photos of Spud on adventures, lounging at home, and being the perfect companion.</p><div class="gallery"><div class="gallery-item"><img src="images/spud/spudCute.jpeg" alt="Spud relaxing"><div class="gallery-item-text"><p>Spud relaxing in his favorite place</p></div></div><div class="gallery-item"><img src="images/spud/spudOutside.jpeg" alt="Spud outside"><div class="gallery-item-text"><p>Spud chilling on his deck</p></div></div><div class="gallery-item"><img src="images/spud/spudPB.jpeg" alt="Spud with peanut butter"><div class="gallery-item-text"><p>Spud finishing off the jar of peanut butter</p></div></div></div></section>
+<section id="events" class="section"><h2>🎉 RODS Event Planning &amp; Parties</h2><p>Planning amazing events is my passion! From intimate gatherings to spectacular celebrations, I love creating memorable experiences. Check out some of my favorite event moments and get inspired for your next party!</p></section>
+<section id="gallery" class="section"><h2>🪩 Main Gallery</h2><p>A collection of your favorite memories in all their disco-ball glory!</p></section>
 </div>
 <footer><p>🪩 Keep Disco'ing ✨ &copy; 2026 Pam Sampson ✨ Living in Color 🪩</p></footer>
 <script>
@@ -220,7 +96,7 @@ function makeGame(name, difficulty) {
 
     function renderStats() {
         statsElement.textContent = `Wins: ${stats.wins} | Losses: ${stats.losses} | Ties: ${stats.ties}`;
-        try { localStorage.setItem(storageKey, JSON.stringify(stats)); } catch (error) { /* Stats still work until the page is closed. */ }
+        try { localStorage.setItem(storageKey, JSON.stringify(stats)); } catch (error) { /* Stats remain available for this page session. */ }
     }
 
     for (let i = 0; i < 9; i++) {
@@ -274,6 +150,24 @@ function makeGame(name, difficulty) {
         return move;
     }
 
+    function mediumMove() {
+        const moves = available(board);
+        // Always take an immediate win or stop the player from winning next turn.
+        for (const move of moves) { const test = [...board]; test[move] = 'O'; if (winner(test) === 'O') return move; }
+        for (const move of moves) { const test = [...board]; test[move] = 'X'; if (winner(test) === 'X') return move; }
+        // Usually choose the best strategic move, but sometimes make a reasonable blunder.
+        if (Math.random() < 0.3) {
+            const safeMoves = moves.filter(move => {
+                const test = [...board];
+                test[move] = 'O';
+                return !available(test).some(reply => { const afterReply = [...test]; afterReply[reply] = 'X'; return winner(afterReply) === 'X'; });
+            });
+            const choices = safeMoves.length ? safeMoves : moves;
+            return choices[Math.floor(Math.random() * choices.length)];
+        }
+        return hardMove();
+    }
+
     function updateBoard() {
         boardElement.querySelectorAll('.cell').forEach((cell,index) => {
             cell.textContent = board[index];
@@ -309,7 +203,7 @@ function makeGame(name, difficulty) {
         statusElement.textContent = '🐔 The chicken is thinking...';
         setTimeout(() => {
             if (!active) return;
-            const move = difficulty === 'hard' ? hardMove() : easyMove();
+            const move = difficulty === 'hard' ? hardMove() : difficulty === 'medium' ? mediumMove() : easyMove();
             if (move !== null) board[move] = 'O';
             updateBoard();
             const chickenWinner = winner(board);
@@ -329,11 +223,14 @@ function makeGame(name, difficulty) {
 }
 
 const easyGame = makeGame('Easy', 'easy');
+const mediumGame = makeGame('Medium', 'medium');
 const hardGame = makeGame('Hard', 'hard');
 document.querySelectorAll('.reset-btn').forEach(button => {
-    button.addEventListener('click', () => button.dataset.game === 'hard' ? hardGame.reset() : easyGame.reset());
+    button.addEventListener('click', () => {
+        const games = { easy: easyGame, medium: mediumGame, hard: hardGame };
+        games[button.dataset.game].reset();
+    });
 });
-
 </script>
 </body>
 </html>
